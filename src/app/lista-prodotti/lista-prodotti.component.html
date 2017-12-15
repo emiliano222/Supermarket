@@ -1,3 +1,31 @@
-<p>
-  lista-prodotti works!
-</p>
+<h1 align="center">Lista Prodotti</h1>
+
+<button mat-button [matMenuTriggerFor]="menu">Profilo</button>
+
+<mat-menu #menu="matMenu">
+  <button mat-menu-item routerLink="/profilo">Profilo</button>
+  <button mat-menu-item (click)="logout()" >Logout</button>
+
+</mat-menu>
+
+<mat-grid-list cols="5" rowHeight="6:1">
+
+  <mat-grid-tile style="background: azure">ALIMENTI</mat-grid-tile>
+  <mat-grid-tile style="background: azure">PRODOTTI PER LA CASA</mat-grid-tile>
+  <mat-grid-tile style="background: azure">PRODOTTI PER LA PERSONA</mat-grid-tile>
+  <mat-grid-tile style="background: azure">BESTIE</mat-grid-tile>
+
+</mat-grid-list>
+
+<div *ngFor="let prod of listaProd">
+  <mat-grid-tile>{{prod.id}}</mat-grid-tile>
+  <mat-grid-tile>{{prod.nome}}</mat-grid-tile>
+  <mat-grid-tile>{{prod.marca}}</mat-grid-tile>
+  <mat-grid-tile>{{prod.dataScadenza}}</mat-grid-tile>
+  <mat-grid-tile>{{prod.quantitaDisponibile}}</mat-grid-tile>
+  <mat-grid-tile>{{prod.unita}}</mat-grid-tile>
+  <mat-grid-tile>{{prod.prezzoUnitario}}</mat-grid-tile>
+  <mat-grid-tile>{{prod.prezzoSenzaIva}}</mat-grid-tile>
+  <mat-grid-tile>{{prod.prezzoIvato}}</mat-grid-tile>
+  <mat-grid-tile>{{prod.offerta}}</mat-grid-tile>
+</div>

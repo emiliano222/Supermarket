@@ -24,14 +24,11 @@ import {FormsModule} from '@angular/forms';
 import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import {ListaProdottiServiceService} from './services/lista-prodotti-service.service';
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
-import {
-  MatButtonModule, MatCheckboxModule, MatFormFieldModule, MatGridListModule, MatInputModule,
-  MatMenuModule
-} from "@angular/material";
+
 import {SharedServiceService} from './services/shared-service.service';
 import {InterceptorService} from './services/interceptor.service';
 import {HttpModule} from '@angular/http';
-import {Location} from '@angular/common';
+import {MatButtonModule, MatCheckboxModule, MatFormFieldModule, MatGridListModule, MatInputModule, MatMenuModule} from '@angular/material';
 
 
 @NgModule({

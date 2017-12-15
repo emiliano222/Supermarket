@@ -8,7 +8,7 @@ export class ListaProdottiServiceService {
   constructor(private http:HttpClient) { }
 
   getList(){
-    return this.http.get<Array<any>>(BACKEND_URL+'/product/getAll');
+    return this.http.get<Array<any>>(BACKEND_URL+'/prodotti/getall');
 
 }
 }

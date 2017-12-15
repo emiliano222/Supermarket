@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Router} from '@angular/router';
 import {LoginService} from '../services/login-service.service';
+import {Location} from '@angular/common';
 
 @Component({
   selector: 'app-login',
@@ -11,7 +12,7 @@ export class LoginComponent implements OnInit {
 
   user = {username: '', password: ''};
 
-  constructor(private loginService: LoginService, private router: Router) {
+  constructor(private loginService: LoginService,private location:Location, private router: Router) {
   }
 
   ngOnInit() {
@@ -20,8 +21,8 @@ export class LoginComponent implements OnInit {
   login() {
     this.loginService.login(this.user).subscribe(data => {
       console.log(data);
-      localStorage.setItems('user', JSON.stringify(data));
-      localStorage.setItems('token', btoa(this.user.username + ':' + this.user.password));
+      localStorage.setItem('user', JSON.stringify(data));
+      localStorage.setItem('token', btoa(this.user.username + ':' + this.user.password));
       console.log(localStorage.getItem('token'));
       this.router.navigate(['lista-prodotti']);
     }), err => {

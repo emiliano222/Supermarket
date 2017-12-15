@@ -22,6 +22,6 @@ export class LoginService {
   }
 
   logout() {
-    return this.http.options(BACKEND_URL + '/logoutApp',{responseType:'text'});
+    return this.http.options(BACKEND_URL + '/logout',{responseType:'text'});
   }
 }
