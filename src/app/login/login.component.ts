@@ -12,7 +12,7 @@ export class LoginComponent implements OnInit {
 
   user = {username: '', password: ''};
 
-  constructor(private loginService: LoginService,private location:Location, private router: Router) {
+  constructor(private loginService: LoginService, private location: Location, private router: Router) {
   }
 
   ngOnInit() {
@@ -27,6 +27,6 @@ export class LoginComponent implements OnInit {
       this.router.navigate(['lista-prodotti']);
     }), err => {
       console.error(err);
-    }
+    };
   }
 }

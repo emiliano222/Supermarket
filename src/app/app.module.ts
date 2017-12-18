@@ -1,6 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { RouterModule } from '@angular/router'
+import { RouterModule } from '@angular/router';
+import { AlertModule } from 'ngx-bootstrap';
+
 
 
 import { AppComponent } from './app.component';
@@ -29,6 +31,7 @@ import {SharedServiceService} from './services/shared-service.service';
 import {InterceptorService} from './services/interceptor.service';
 import {HttpModule} from '@angular/http';
 import {MatButtonModule, MatCheckboxModule, MatFormFieldModule, MatGridListModule, MatInputModule, MatMenuModule} from '@angular/material';
+import { ProdottoDetailComponent } from './prodotto-detail/prodotto-detail.component';
 
 
 @NgModule({
@@ -44,7 +47,8 @@ import {MatButtonModule, MatCheckboxModule, MatFormFieldModule, MatGridListModul
     CarrelloComponent,
     AddCartaComponent,
     ListaCarteComponent,
-    OrdiniComponent
+    OrdiniComponent,
+    ProdottoDetailComponent
   ],
   imports: [
     BrowserModule,
@@ -59,7 +63,8 @@ import {MatButtonModule, MatCheckboxModule, MatFormFieldModule, MatGridListModul
     MatInputModule,
     MatCheckboxModule,
     MatMenuModule,
-    MatGridListModule
+    MatGridListModule,
+    AlertModule.forRoot()
 
   ],
   providers: [LoginService,

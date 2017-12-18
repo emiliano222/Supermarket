@@ -1,31 +1,34 @@
-<h1 align="center">Lista Prodotti</h1>
+<div class="container">
+  <h1 align="center">Lista Prodotti</h1>
 
-<button mat-button [matMenuTriggerFor]="menu">Profilo</button>
+  <button mat-button [matMenuTriggerFor]="menu">Profilo</button>
 
-<mat-menu #menu="matMenu">
-  <button mat-menu-item routerLink="/profilo">Profilo</button>
-  <button mat-menu-item (click)="logout()" >Logout</button>
+  <mat-menu #menu="matMenu">
+    <button mat-menu-item routerLink="/profilo">Profilo</button>
+    <button mat-menu-item (click)="logout()">Logout</button>
 
-</mat-menu>
+  </mat-menu>
 
-<mat-grid-list cols="5" rowHeight="6:1">
 
-  <mat-grid-tile style="background: azure">ALIMENTI</mat-grid-tile>
-  <mat-grid-tile style="background: azure">PRODOTTI PER LA CASA</mat-grid-tile>
-  <mat-grid-tile style="background: azure">PRODOTTI PER LA PERSONA</mat-grid-tile>
-  <mat-grid-tile style="background: azure">BESTIE</mat-grid-tile>
+  <div class="row text-center text-lg-left">
 
-</mat-grid-list>
+    <div class="col-lg-3 col-md-4 col-xs-6" *ngFor="let prod of listaProd">
 
-<div *ngFor="let prod of listaProd">
-  <mat-grid-tile>{{prod.id}}</mat-grid-tile>
-  <mat-grid-tile>{{prod.nome}}</mat-grid-tile>
-  <mat-grid-tile>{{prod.marca}}</mat-grid-tile>
-  <mat-grid-tile>{{prod.dataScadenza}}</mat-grid-tile>
-  <mat-grid-tile>{{prod.quantitaDisponibile}}</mat-grid-tile>
-  <mat-grid-tile>{{prod.unita}}</mat-grid-tile>
-  <mat-grid-tile>{{prod.prezzoUnitario}}</mat-grid-tile>
-  <mat-grid-tile>{{prod.prezzoSenzaIva}}</mat-grid-tile>
-  <mat-grid-tile>{{prod.prezzoIvato}}</mat-grid-tile>
-  <mat-grid-tile>{{prod.offerta}}</mat-grid-tile>
+      <div class="thumbnail" style="width: 300px;height: 300px">
+        <a class="d-block mb-4 h-100">
+          <img src={{prod.img}} style="max-width: 50%;height: 50%">
+        </a>
+        <div class="caption">
+          <h4>{{prod.nome}}</h4>
+          <p>{{prod.marca}}</p>
+          <h3>{{prod.prezzoIvato}} €</h3>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
 </div>
+
+
+

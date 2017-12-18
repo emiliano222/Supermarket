@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Router} from '@angular/router';
 import {ListaProdottiServiceService} from '../services/lista-prodotti-service.service';
+import {SharedService} from '../../shared-service.service';
 
 @Component({
   selector: 'app-lista-prodotti',
@@ -12,7 +13,7 @@ export class ListaProdottiComponent implements OnInit {
   listaProd: Array<any> = new Array();
   private n;
 
-  constructor(private listaProdottiService:ListaProdottiServiceService, private router:Router) { }
+  constructor(private listaProdottiService: ListaProdottiServiceService, private router: Router, private _sharedService: SharedService) { }
 
 
 
@@ -23,12 +24,12 @@ export class ListaProdottiComponent implements OnInit {
   getList() {
     this.listaProdottiService.getList().subscribe(data => {
       this.listaProd = data;
-      this.n=this.listaProd.length;
-      console.log(this.listaProd)
+      this.n = this.listaProd.length;
+      console.log(this.listaProd);
       console.log(this.n);
     }, err => {
-      console.log(err)
-    })
+      console.log(err);
+    });
   }
 
 }
