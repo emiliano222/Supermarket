@@ -14,7 +14,7 @@ export class ListaProdottiComponent implements OnInit {
   listaProd: Array<any> = new Array();
   private n;
 
-  constructor(private listaProdottiService: ListaProdottiServiceService, private router: Router, private _sharedService: SharedServiceService) { }
+  constructor(private listaProdottiService: ListaProdottiServiceService, private router: Router, private _sharedService: SharedServiceService ) { }
 
 
 
