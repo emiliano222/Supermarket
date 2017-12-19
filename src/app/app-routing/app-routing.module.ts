@@ -6,14 +6,16 @@ import {AuthGuardService} from '../services/auth-guard-service.service';
 import {ListaProdottiComponent} from '../lista-prodotti/lista-prodotti.component';
 import {VolantinoComponent} from '../volantino/volantino.component';
 import {HomeComponent} from '../home/home.component';
+import {ProdottoDetailComponent} from '../prodotto-detail/prodotto-detail.component';
 
 const routes: Routes = [
-  {path: '',redirectTo:'/home',pathMatch:'full'},
-  {path: 'home', component:HomeComponent},
-  {path: 'login', component:LoginComponent},
-  {path: 'register', component:RegisterComponent},
-  {path: 'volantino', component:VolantinoComponent},
-  {path: 'lista-prodotti', component:ListaProdottiComponent, canActivate: [AuthGuardService]},
+  {path: '', redirectTo: '/home', pathMatch: 'full'},
+  {path: 'home', component: HomeComponent},
+  {path: 'login', component: LoginComponent},
+  {path: 'register', component: RegisterComponent},
+  {path: 'volantino', component: VolantinoComponent},
+  {path: 'lista-prodotti', component: ListaProdottiComponent, canActivate: [AuthGuardService]},
+  {path: 'prodotto-detail/:id', component: ProdottoDetailComponent}
 ];
 
 @NgModule({

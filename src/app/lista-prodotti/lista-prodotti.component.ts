@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {Router} from '@angular/router';
 import {ListaProdottiServiceService} from '../services/lista-prodotti-service.service';
-import {SharedService} from '../../shared-service.service';
+import {SharedServiceService} from '../services/shared-service.service';
+
 
 @Component({
   selector: 'app-lista-prodotti',
@@ -13,7 +14,7 @@ export class ListaProdottiComponent implements OnInit {
   listaProd: Array<any> = new Array();
   private n;
 
-  constructor(private listaProdottiService: ListaProdottiServiceService, private router: Router, private _sharedService: SharedService) { }
+  constructor(private listaProdottiService: ListaProdottiServiceService, private router: Router, private _sharedService: SharedServiceService) { }
 
 
 
