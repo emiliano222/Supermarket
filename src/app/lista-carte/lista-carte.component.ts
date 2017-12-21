@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
+
 @Component({
   selector: 'app-lista-carte',
   templateUrl: './lista-carte.component.html',
@@ -7,7 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListaCarteComponent implements OnInit {
 
-  constructor() { }
+  listaCart: Array<any> = new Array();
+
+  constructor() {
+
+  }
+
+
 
   ngOnInit() {
   }

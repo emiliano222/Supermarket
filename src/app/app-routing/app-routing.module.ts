@@ -7,6 +7,7 @@ import {ListaProdottiComponent} from '../lista-prodotti/lista-prodotti.component
 import {VolantinoComponent} from '../volantino/volantino.component';
 import {HomeComponent} from '../home/home.component';
 import {ProdottoDetailComponent} from '../prodotto-detail/prodotto-detail.component';
+import {CarrelloComponent} from "../carrello/carrello.component";
 
 const routes: Routes = [
   {path: '', redirectTo: '/home', pathMatch: 'full'},
@@ -15,7 +16,8 @@ const routes: Routes = [
   {path: 'register', component: RegisterComponent},
   {path: 'volantino', component: VolantinoComponent},
   {path: 'lista-prodotti', component: ListaProdottiComponent, canActivate: [AuthGuardService]},
-  {path: 'prodotto-detail/:id', component: ProdottoDetailComponent}
+  {path: 'prodotto-detail/:id', component: ProdottoDetailComponent},
+  {path: 'carrello', component: CarrelloComponent}
 ];
 
 @NgModule({

@@ -1,3 +1,34 @@
-<p>
-  carrello works!
-</p>
+<div class="container" >
+  <div class="row text-center text-lg-left">
+
+    <div class="col-lg-3 col-md-4 col-xs-6" *ngFor="let prod of listaCarrello">
+
+      <div class="thumbnail" style="width: 300px;height: 300px">
+        <a class="d-block mb-4 h-100">
+          <img routerLink="/prodotto-detail/{{prod.id}}" src={{prod.img}} style="max-width: 50%;height: 50%">
+        </a>
+        <div class="caption">
+          <h4>{{prod.nome}}</h4>
+          <p>{{prod.marca}}</p>
+          <h3>{{prod.prezzoIvato}} €  Q.ta selezionata{{prod.quantitaDaAcquistare}}</h3>
+
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+
+
+<div class="dropdown">
+  <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown" (click)="selectCart()">Seleziona Metodo di Pagamento
+    <span class="caret"></span></button>
+  <ul class="dropdown-menu">
+    <li><a *ngFor="let cart of listaCart">
+      {{cart.ccv}} {{cart.credito}}
+    </a></li>
+
+  </ul>
+</div>
+</div>

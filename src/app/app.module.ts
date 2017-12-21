@@ -32,6 +32,7 @@ import {InterceptorService} from './services/interceptor.service';
 import {HttpModule} from '@angular/http';
 import {MatButtonModule, MatCheckboxModule, MatFormFieldModule, MatGridListModule, MatInputModule, MatMenuModule} from '@angular/material';
 import { ProdottoDetailComponent } from './prodotto-detail/prodotto-detail.component';
+import {ListaCarteService} from "./services/lista-carte.service";
 
 
 @NgModule({
@@ -69,6 +70,7 @@ import { ProdottoDetailComponent } from './prodotto-detail/prodotto-detail.compo
   ],
   providers: [LoginService,
     ListaProdottiServiceService,
+    ListaCarteService,
     {
       provide: HTTP_INTERCEPTORS,
       useClass: InterceptorService,
